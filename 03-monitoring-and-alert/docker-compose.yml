@@ -7,7 +7,7 @@ services:
     ports:
       - 8025:8025
   redpanda0:
-    image: docker.redpanda.com/redpandadata/redpanda:latest
+    image: docker.redpanda.com/redpandadata/redpanda:v24.2.7
     container_name: redpanda-0
     command:
     - redpanda
@@ -36,7 +36,7 @@ services:
     - 9644:9644
     - 28082:28082
   console:
-    image: docker.redpanda.com/redpandadata/console:latest
+    image: docker.redpanda.com/redpandadata/console:v2.7.2
     restart: on-failure
     entrypoint: /bin/sh
     command: -c "echo \"$$CONSOLE_CONFIG_FILE\" > /tmp/config.yml; /app/console"
